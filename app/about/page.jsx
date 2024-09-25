@@ -30,10 +30,9 @@ export default function About() {
                   experience that marries culinary excellence with an atmosphere
                   of refined elegance.
                 </p>
-                <p className="text-base md:text-lg mb-4">
-                  The restaurant's commitment to quality and innovation earned
-                  it numerous accolades, including a Michelin star just three
-                  years after opening.
+                <p>
+                  The restaurant&#39;s commitment to quality and innovation
+                  earned it numerous accolades.
                 </p>
               </div>
             </div>
