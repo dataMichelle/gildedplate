@@ -1,0 +1,122 @@
+{
+  "all": [
+    {
+      "name": "Classic Lemonade",
+      "price": "$3.50",
+      "description": "Freshly squeezed lemons with a hint of sweetness."
+    },
+    {
+      "name": "Truffle Risotto",
+      "price": "$28.00",
+      "description": "Creamy risotto infused with black truffles, Parmigiano-Reggiano, and a drizzle of truffle oil."
+    },
+    {
+      "name": "Wagyu Beef Carpaccio",
+      "price": "$35.00",
+      "description": "Thin slices of Wagyu beef, arugula, shaved Parmesan, and a lemon vinaigrette."
+    },
+    {
+      "name": "Foie Gras Torchon",
+      "price": "$40.00",
+      "description": "Rich foie gras served with toasted brioche and a fig compote."
+    },
+    {
+      "name": "Grilled Filet Mignon",
+      "price": "$45.00",
+      "description": "Tender filet mignon steak cooked to perfection, served with garlic mashed potatoes and sautéed asparagus."
+    },
+    {
+      "name": "Lobster Bisque",
+      "price": "$18.00",
+      "description": "Velvety lobster bisque with a touch of cognac and crème fraîche."
+    }
+  ],
+  "beverages": [
+    {
+      "name": "Classic Lemonade",
+      "price": "$3.50",
+      "description": "Freshly squeezed lemons with a hint of sweetness."
+    },
+    {
+      "name": "Château d'Yquem",
+      "price": "$50.00",
+      "description": "A world-renowned Sauternes with notes of honey and apricot."
+    },
+    {
+      "name": "Perrier-Jouët Champagne",
+      "price": "$60.00",
+      "description": "A luxurious Champagne with a floral bouquet and delicate bubbles."
+    },
+    {
+      "name": "San Pellegrino Sparkling Water",
+      "price": "$6.00",
+      "description": "Refreshing Italian sparkling water."
+    }
+  ],
+  "cocktails": [
+    {
+      "name": "Negroni Sbagliato",
+      "price": "$15.00",
+      "description": "A twist on the classic Negroni with Prosecco, Campari, and sweet vermouth."
+    },
+    {
+      "name": "French 75",
+      "price": "$18.00",
+      "description": "Gin, lemon juice, and Champagne in a refreshing, bubbly cocktail."
+    },
+    {
+      "name": "Manhattan",
+      "price": "$20.00",
+      "description": "Bourbon, sweet vermouth, and bitters, garnished with a maraschino cherry."
+    },
+    {
+      "name": "Espresso Martini",
+      "price": "$18.00",
+      "description": "Vodka, espresso, and coffee liqueur shaken to perfection."
+    }
+  ],
+  "lunch": [
+    {
+      "name": "Crab Salad with Avocado",
+      "price": "$32.00",
+      "description": "Fresh lump crab meat served with avocado, citrus segments, and a champagne vinaigrette."
+    },
+    {
+      "name": "Lobster Roll",
+      "price": "$30.00",
+      "description": "Chunks of Maine lobster served in a toasted brioche bun with herb mayo."
+    },
+    {
+      "name": "Burrata Salad",
+      "price": "$22.00",
+      "description": "Creamy burrata with heirloom tomatoes, fresh basil, and a balsamic reduction."
+    },
+    {
+      "name": "Grilled Chicken Caesar Salad",
+      "price": "$25.00",
+      "description": "Grilled chicken breast, crisp romaine, Caesar dressing, and Parmesan shavings."
+    }
+  ],
+  "dinner": [
+    {
+      "name": "Pan-Seared Scallops",
+      "price": "$38.00",
+      "description": "Seared scallops on a bed of cauliflower purée with a citrus beurre blanc."
+    },
+    {
+      "name": "Lamb Rack with Rosemary Jus",
+      "price": "$48.00",
+      "description": "Tender lamb rack served with roasted vegetables and rosemary jus."
+    },
+    {
+      "name": "Black Truffle Gnocchi",
+      "price": "$32.00",
+      "description": "Soft potato gnocchi tossed in a black truffle cream sauce."
+    },
+    {
+      "name": "Sea Bass en Papillote",
+      "price": "$42.00",
+      "description": "Delicate sea bass baked in parchment with lemon, herbs, and vegetables."
+    }
+  ]
+}
