@@ -1,4 +1,5 @@
-// app/error.js (for Next.js App Router)
+"use client";
+
 export default function Error({ error, reset }) {
   return (
     <div>
