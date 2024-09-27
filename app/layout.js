@@ -1,7 +1,19 @@
 import { Inter } from "next/font/google";
+import { Allura } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
+const allura = Allura({
+  weight: "400",
+  subsets: ["latin"],
+});
+const poppins = Poppins({
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +22,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={poppins.variable}>
+      <body
+        className={`${inter.variable} bg-custom-background bg-cover bg-center`}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-70 z-[-1]"></div>
+
+        {/* Add blur to background image */}
+        <div className="absolute inset-0 blur-sm z-[-2]"></div>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

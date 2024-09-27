@@ -1,9 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { Allura } from "next/font/google";
+
 import Link from "next/link";
 
-export default function Header({ alluraClassName }) {
+const allura = Allura({
+  subsets: ["latin"],
+  weight: "400", // Specify the available weight
+});
+
+export default function Header() {
   // State to manage mobile menu visibility
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -21,13 +28,13 @@ export default function Header({ alluraClassName }) {
         {/* Logo */}
         <Link
           href="/"
-          className={`text-gold text-3xl tracking-wide leading-none ${alluraClassName}`}
+          className={`${allura.className} text-gold text-3xl tracking-wide leading-none`}
         >
           The Gilded Plate
         </Link>
 
         {/* Desktop Navigation */}
-        <nav id="navbar" className="hidden md:flex space-x-8">
+        <nav id="navbar" className="hidden md:flex space-x-8 items-center">
           <Link
             href="/"
             className="nav-link text-white hover:text-gold transition"
@@ -51,6 +58,14 @@ export default function Header({ alluraClassName }) {
             className="nav-link text-white hover:text-gold transition"
           >
             Contact
+          </Link>
+
+          {/* Book a Table Button for Desktop */}
+          <Link
+            href="/reservation"
+            className="border-2 border-gold text-white rounded-full py-2 px-4 uppercase font-medium tracking-wide hover:bg-gold hover:text-black transition duration-300"
+          >
+            Book a Table
           </Link>
         </nav>
 
@@ -99,11 +114,10 @@ export default function Header({ alluraClassName }) {
             Contact
           </Link>
 
-          {/* Book a Table Button */}
+          {/* Book a Table Button for Mobile */}
           <Link
             href="/reservation"
-            className="mt-8 border-2 border-gold text-white rounded-full py-3 px-6 text-lg uppercase font-medium tracking-wider
-             hover:bg-gold transition duration-300"
+            className="mt-8 border-2 border-gold text-white rounded-full py-3 px-6 text-lg uppercase font-medium tracking-wider hover:bg-gold transition duration-300"
             onClick={() => setMobileMenuOpen(false)}
           >
             Book a Table
