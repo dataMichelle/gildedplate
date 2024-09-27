@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Allura } from "next/font/google";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 import Link from "next/link";
 
@@ -75,9 +76,9 @@ export default function Header() {
           onClick={toggleMobileMenu}
         >
           {isMobileMenuOpen ? (
-            <i className="bi bi-x"></i> // Close icon
+            <FaTimes /> // Close icon
           ) : (
-            <i className="bi bi-list"></i> // Hamburger icon
+            <FaBars /> // Hamburger icon
           )}
         </button>
       </div>
