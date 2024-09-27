@@ -14,8 +14,8 @@ export default function Home() {
 
               {/* Subtitle */}
               <h2 className="text-xl mt-4 text-white font-poppins mb-6">
-                "Indulge in Culinary Delights: Where Every Bite is a Passport to
-                Flavors of Amore!"
+                &quot;Indulge in Culinary Delights: Where Every Bite is a
+                Passport to Flavors of Amore!&quot;
               </h2>
 
               {/* Buttons */}
