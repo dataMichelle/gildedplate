@@ -17,9 +17,9 @@ export default function ReservationPage() {
               arrangements.
             </p>
             <p className="text-lg mb-4">
-              Interested in renting out the entire restaurant for a private
-              event? Please give us a call at +1 (555) 123-4567 to discuss
-              availability, pricing, and menu customization options.
+              Interested in renting out space for a private event? Please give
+              us a call at +1 (555) 123-4567 to discuss availability, pricing,
+              and menu customization options.
             </p>
             <p className="text-lg mb-4">
               We recommend making reservations at least one week in advance to

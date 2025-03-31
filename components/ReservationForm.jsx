@@ -15,6 +15,8 @@ export default function ReservationForm() {
     requests: "",
   });
 
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
+
   // Define available hours for a fine-dining restaurant (5:00 PM to 10:45 PM)
   const availableHours = {
     startHour: 17, // 5:00 PM
@@ -98,7 +100,21 @@ export default function ReservationForm() {
       alert("Selected time is not available. Please choose another.");
       return;
     }
-    alert("Reservation submitted successfully!");
+    setIsModalOpen(true); // Open the modal after successful submission
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+    setFormData({
+      name: "",
+      email: "",
+      confirmEmail: "",
+      phone: "",
+      date: "",
+      time: "",
+      guests: 4,
+      requests: "",
+    }); // Reset the form fields
   };
 
   return (
@@ -285,6 +301,25 @@ export default function ReservationForm() {
           </button>
         </div>
       </form>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
+            <h2 className="text-2xl font-bold mb-4">Reservation Confirmed!</h2>
+            <p className="text-gray-700 mb-4">
+              Thank you for your reservation! We look forward to serving you. A
+              confirmation email has been sent to your provided email address.
+            </p>
+            <button
+              onClick={closeModal}
+              className="bg-gold text-white py-2 px-4 rounded-full hover:bg-opacity-90 transition duration-300"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
