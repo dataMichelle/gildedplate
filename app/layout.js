@@ -30,10 +30,10 @@ export default function RootLayout({ children }) {
         className={`${inter.variable} bg-custom-background bg-cover bg-center`}
       >
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black opacity-70 z-[-1]"></div>
+        <div className="fixed inset-0 bg-black opacity-70 z-[-1]"></div>
 
         {/* Add blur to background image */}
-        <div className="absolute inset-0 blur-sm z-[-2]"></div>
+        <div className="fixed inset-0 blur-sm z-[-2]"></div>
         <Header />
         {children}
         <Footer />
