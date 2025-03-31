@@ -1,6 +1,23 @@
 "use client";
+import { useState, useRef } from "react";
 
 export default function ContactPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const formRef = useRef(null); // Reference to the form
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulate form submission logic here
+    setIsModalOpen(true); // Open the modal after submission
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+    if (formRef.current) {
+      formRef.current.reset(); // Reset the form fields
+    }
+  };
+
   return (
     <main className="relative h-screen flex mt-24 items-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto">
@@ -18,7 +35,12 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <form className="flex flex-col gap-4 w-full" noValidate>
+        <form
+          ref={formRef} // Attach the form reference
+          className="flex flex-col gap-4 w-full"
+          onSubmit={handleSubmit}
+          noValidate
+        >
           {/* Name Field */}
           <label htmlFor="name" className="text-lg font-semibold">
             Name
@@ -94,6 +116,25 @@ export default function ContactPage() {
           </button>
         </form>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
+            <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
+            <p className="text-gray-700 mb-4">
+              Thank you for contacting us. We will be in touch shortly! Please
+              check your email for a copy of this form information.
+            </p>
+            <button
+              onClick={closeModal}
+              className="bg-gold text-white py-2 px-4 rounded-full hover:bg-opacity-90 transition duration-300"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
