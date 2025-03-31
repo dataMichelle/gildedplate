@@ -32,7 +32,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl md:text-5xl font-extrabold text-gold tracking-wide font-cinzel drop-shadow-md mb-4">
+              <h2 className="text-2xl md:text-4xl font-extrabold text-gold tracking-wide font-cinzel drop-shadow-md mb-4">
                 About Us
               </h2>
               <div className="content text-left">
@@ -73,7 +73,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl md:text-5xl font-extrabold text-gold tracking-wide font-cinzel drop-shadow-md mb-4">
+              <h2 className="text-2xl md:text-4xl font-extrabold text-gold tracking-wide font-cinzel drop-shadow-md mb-4">
                 Our History
               </h2>
               <div className="content text-left">
@@ -114,7 +114,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl md:text-5xl font-extrabold text-gold tracking-wide font-cinzel drop-shadow-md mb-4">
+              <h2 className="text-2xl md:text-4xl font-extrabold text-gold tracking-wide font-cinzel drop-shadow-md mb-4">
                 Exquisite Delicacies
               </h2>
               <div className="content text-left">
