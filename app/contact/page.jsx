@@ -20,7 +20,7 @@ export default function ContactPage() {
 
   return (
     <main className="relative h-screen flex mt-24 items-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto">
+      <div className="bg-[#fdf7e3] p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto">
         {/* Contact Information */}
         <h1 className="text-4xl font-bold mb-8 text-center">Contact Us</h1>
 
