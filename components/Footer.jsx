@@ -51,7 +51,7 @@ export default function Footer() {
           <h5 className="text-xl font-semibold text-[#cda45e] mb-4">
             Useful Links
           </h5>
-          <ul className="space-y-2">
+          <ul className="flex space-x-4">
             <li>
               <a
                 href="/"

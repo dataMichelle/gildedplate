@@ -4,7 +4,20 @@ export default function ContactPage() {
   return (
     <main className="relative h-screen flex mt-24 items-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto">
+        {/* Contact Information */}
         <h1 className="text-4xl font-bold mb-8 text-center">Contact Us</h1>
+
+        {/* Additional Contact Information */}
+        <div className="text-center mb-8">
+          <p className="text-lg font-medium">1234 Gilded Plate Lane</p>
+          <p className="text-lg font-medium">Cityville, ST 56789</p>
+          <p className="text-lg font-medium">Phone: (555) 123-4567</p>
+          <p className="text-sm text-gray-600 mt-5">
+            For any inquiries, please use the form below to get in touch with
+            us.
+          </p>
+        </div>
+
         <form className="flex flex-col gap-4 w-full" noValidate>
           {/* Name Field */}
           <label htmlFor="name" className="text-lg font-semibold">
