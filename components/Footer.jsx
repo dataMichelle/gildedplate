@@ -81,7 +81,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="footer-copyright text-right self-end">
           <p className="mb-2 text-sm">
-            © 2024 The Gilded Plate. All Rights Reserved
+            © 2025 The Gilded Plate. All Rights Reserved
           </p>
         </div>
       </div>
