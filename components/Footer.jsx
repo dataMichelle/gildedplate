@@ -3,9 +3,7 @@ import { FaTwitter, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-black text-[#cda45e] text-lg pt-6">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center px-4 py-6 md:px-0 md:py-8">
-        {" "}
-        {/* Add padding for mobile, remove for desktop */}
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start px-4 py-6 md:px-0 md:py-8">
         {/* Footer Info */}
         <div className="footer-info">
           <h3 className="text-2xl font-poppins text-[#cda45e]">
@@ -79,7 +77,7 @@ export default function Footer() {
           </ul>
         </div>
         {/* Copyright */}
-        <div className="footer-copyright text-right self-end">
+        <div className="footer-copyright text-right">
           <p className="mb-2 text-sm">
             © 2025 The Gilded Plate. All Rights Reserved
           </p>
