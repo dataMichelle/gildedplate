@@ -4,3 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@400&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap");
+.font-cinzel {
+  font-family: "Cinzel", serif;
+}

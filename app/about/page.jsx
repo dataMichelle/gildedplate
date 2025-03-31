@@ -1,130 +1,148 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function About() {
   return (
-    <main className="relative min-h-screen flex items-start pt-24 md:pt-48 bg-home-background bg-cover bg-center pb-8">
-      <section id="about" className="about w-full">
-        <div className="container mx-auto text-center bg-[#fdf7e3] p-4 md:p-8 rounded-lg shadow-md">
+    <main className="relative min-h-screen flex items-start pt-24 md:pt-48 bg-home-background bg-cover bg-center pb-8 overflow-hidden">
+      <section id="about" className="w-full">
+        <div className="container mx-auto text-center bg-[#fdf7e3] p-6 md:p-12 rounded-xl shadow-2xl max-w-5xl">
           {/* First Row: About Us */}
-          <div className="row grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {/* Image 1 */}
-            <div className="relative">
+            <motion.div
+              className="relative h-64 md:h-80"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <div
-                className="absolute inset-0 bg-cover bg-center shadow-xl"
+                className="absolute inset-0 bg-cover bg-center shadow-xl rounded-lg border border-gold/20"
                 style={{
                   backgroundImage: "url('/about_restaurant.jpg')",
-                  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.2)",
+                  boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
                 }}
               ></div>
-              <div className="call-us absolute inset-0 flex justify-center items-center bg-white bg-opacity-40">
-                <h2 className="text-3xl md:text-4xl font-bold">About Us</h2>
-              </div>
-            </div>
+            </motion.div>
 
-            {/* Text Section 1 */}
-            <div className="flex justify-center items-center px-4 md:px-8">
-              <div className="content">
-                <p className="text-base md:text-lg mb-4">
-                  The Gilded Plate was established in 1995 by renowned chef and
-                  restaurateur John Willard, who envisioned creating a dining
-                  experience that marries culinary excellence with an atmosphere
-                  of refined elegance.
+            {/* Text Section 1 with Left-Justified Header */}
+            <motion.div
+              className="flex flex-col justify-center items-start px-4 md:px-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h2 className="text-3xl md:text-5xl font-extrabold text-gold tracking-wide font-cinzel drop-shadow-md mb-4">
+                About Us
+              </h2>
+              <div className="content text-left">
+                <p className="text-lg md:text-xl font-light text-gray-800 font-cinzel leading-relaxed mb-4">
+                  Founded in 1995 by visionary chef John Willard, The Gilded
+                  Plate melds culinary artistry with timeless sophistication.
                 </p>
-                <p>
-                  The restaurant&#39;s commitment to quality and innovation
-                  earned it numerous accolades.
+                <p className="text-lg md:text-xl font-light text-gray-800 font-cinzel leading-relaxed">
+                  Our relentless pursuit of perfection has earned us prestigious
+                  accolades.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Second Row: Our History */}
-          <div className="row grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mt-16 md:mt-24">
-            {/* Image 2 (desktop first) */}
-            <div className="relative lg:order-last order-first">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mt-16 md:mt-24">
+            {/* Image 2 */}
+            <motion.div
+              className="relative h-64 md:h-80 lg:order-last"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <div
-                className="absolute inset-0 bg-cover bg-center shadow-xl"
+                className="absolute inset-0 bg-cover bg-center shadow-xl rounded-lg border border-gold/20"
                 style={{
                   backgroundImage: "url('/table_setting.jpg')",
-                  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.2)",
+                  boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
                 }}
               ></div>
-              <div className="call-us absolute inset-0 flex justify-center items-center bg-white bg-opacity-40">
-                <h2 className="text-3xl md:text-4xl font-bold">Our History</h2>
-              </div>
-            </div>
+            </motion.div>
 
-            {/* Text Section 2 */}
-            <div className="flex justify-center items-center px-4 md:px-8 order-none">
-              <div className="content">
-                <p className="text-base md:text-lg mb-4">
-                  Over the years, The Gilded Plate has evolved, expanding its
-                  menu to include a diverse array of gourmet dishes that cater
-                  to both traditional palates and adventurous food enthusiasts.
+            {/* Text Section 2 with Left-Justified Header */}
+            <motion.div
+              className="flex flex-col justify-center items-start px-4 md:px-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h2 className="text-3xl md:text-5xl font-extrabold text-gold tracking-wide font-cinzel drop-shadow-md mb-4">
+                Our History
+              </h2>
+              <div className="content text-left">
+                <p className="text-lg md:text-xl font-light text-gray-800 font-cinzel leading-relaxed mb-4">
+                  Over decades, our menu has flourished, offering gourmet
+                  creations for discerning and bold diners alike.
                 </p>
-                <p className="text-base md:text-lg mb-4">
-                  Today, The Gilded Plate continues to be a beacon of culinary
-                  excellence, attracting diners from around the world.
+                <p className="text-lg md:text-xl font-light text-gray-800 font-cinzel leading-relaxed">
+                  Today, The Gilded Plate shines as a global pinnacle of
+                  culinary mastery.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Third Row: Exquisite Delicacies */}
-          <div className="row grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-16 mt-16 md:mt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 mt-16 md:mt-24">
             {/* Image 3 */}
-            <div className="relative">
+            <motion.div
+              className="relative h-64 md:h-80"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <div
-                className="absolute inset-0 bg-cover bg-center shadow-xl"
+                className="absolute inset-0 bg-cover bg-center shadow-xl rounded-lg border border-gold/20"
                 style={{
                   backgroundImage: "url('/steak.jpg')",
-                  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.2)",
+                  boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
                 }}
               ></div>
-              <div className="call-us absolute inset-0 flex justify-center items-center bg-white bg-opacity-40">
-                {/* Concatenated Header for Mobile */}
-                <h2 className="text-3xl md:text-4xl font-bold block lg:hidden">
-                  Exquisite Delicacies
-                </h2>
+            </motion.div>
 
-                {/* Separate Headers for Desktop */}
-                <h2 className="text-3xl md:text-4xl font-bold hidden lg:block">
-                  Exquisite
-                </h2>
-              </div>
-            </div>
-
-            {/* Text Section 3 */}
-            <div className="flex justify-center items-center px-4 md:px-8">
-              <div className="content">
-                <p className="text-base md:text-lg mb-4">
-                  At The Gilded Plate, we pride ourselves on offering an
-                  exquisite selection of delicacies that delight the senses and
-                  elevate the dining experience.
+            {/* Text Section 3 with Left-Justified Header */}
+            <motion.div
+              className="flex flex-col justify-center items-start px-4 md:px-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h2 className="text-3xl md:text-5xl font-extrabold text-gold tracking-wide font-cinzel drop-shadow-md mb-4">
+                Exquisite Delicacies
+              </h2>
+              <div className="content text-left">
+                <p className="text-lg md:text-xl font-light text-gray-800 font-cinzel leading-relaxed mb-4">
+                  Our exquisite delicacies captivate the senses, redefining the
+                  art of fine dining.
                 </p>
-                <p className="text-base md:text-lg">
-                  Join us for a unique experience and savor the delicacies that
-                  define the essence of fine dining.
+                <p className="text-lg md:text-xl font-light text-gray-800 font-cinzel leading-relaxed">
+                  Indulge in a dining experience that transcends the ordinary.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Image 4 */}
-            <div className="relative">
+            <motion.div
+              className="relative h-64 md:h-80"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               <div
-                className="absolute inset-0 bg-cover bg-center shadow-xl"
+                className="absolute inset-0 bg-cover bg-center shadow-xl rounded-lg border border-gold/20"
                 style={{
                   backgroundImage: "url('/delicacy.jpg')",
-                  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.2)",
+                  boxShadow: "0 8px 40px rgba(0, 0, 0, 0.25)",
                 }}
               ></div>
-              <div className="call-us absolute inset-0 flex justify-center items-center bg-white bg-opacity-40">
-                {/* Separate Headers for Desktop */}
-                <h2 className="text-3xl md:text-4xl font-bold hidden lg:block">
-                  Delicacies
-                </h2>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
