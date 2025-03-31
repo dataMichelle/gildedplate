@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { roundToNearest15Minutes } from "../lib/timeUtils"; // Import the utility function
+import { simulatedReservations } from "../data/reservations"; // Adjust path as needed
 
 export default function ReservationForm() {
   const [formData, setFormData] = useState({
@@ -15,17 +15,78 @@ export default function ReservationForm() {
     requests: "",
   });
 
+  // Define available hours for a fine-dining restaurant (5:00 PM to 10:45 PM)
+  const availableHours = {
+    startHour: 17, // 5:00 PM
+    endHour: 22, // 10:00 PM (last option will be 10:45 PM)
+  };
+
+  // Generate 15-minute increment options in 12-hour format with AM/PM
+  const generateTimeOptions = () => {
+    const options = [];
+    for (
+      let hour = availableHours.startHour;
+      hour <= availableHours.endHour;
+      hour++
+    ) {
+      for (let minute = 0; minute < 60; minute += 15) {
+        const militaryHour = hour;
+        const isPM = militaryHour >= 12;
+        const displayHour =
+          militaryHour > 12
+            ? militaryHour - 12
+            : militaryHour === 0
+            ? 12
+            : militaryHour;
+        const formattedHour = displayHour.toString().padStart(2, "0");
+        const formattedMinute = minute.toString().padStart(2, "0");
+        const time = `${formattedHour}:${formattedMinute} ${
+          isPM ? "PM" : "AM"
+        }`;
+        if (
+          hour < availableHours.endHour ||
+          (hour === availableHours.endHour && minute <= 45)
+        ) {
+          options.push(time);
+        }
+      }
+    }
+    return options;
+  };
+
+  const timeOptions = generateTimeOptions();
+
+  // Filter unavailable times based on selected date
+  const getAvailableTimes = () => {
+    if (!formData.date)
+      return timeOptions.map((time) => ({ value: time, isAvailable: true }));
+
+    const bookedTimes = simulatedReservations
+      .filter((reservation) => reservation.date === formData.date)
+      .map((reservation) => {
+        // Convert military time from reservations to 12-hour format
+        const [hour, minute] = reservation.time.split(":").map(Number);
+        const isPM = hour >= 12;
+        const displayHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
+        return `${displayHour.toString().padStart(2, "0")}:${minute
+          .toString()
+          .padStart(2, "0")} ${isPM ? "PM" : "AM"}`;
+      });
+
+    return timeOptions.map((time) => ({
+      value: time,
+      isAvailable: !bookedTimes.includes(time),
+    }));
+  };
+
+  const availableTimes = getAvailableTimes();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     if (name === "guests") {
-      // Ensure guests are between 2 and 10
       const guests = Math.max(2, Math.min(10, value));
       setFormData({ ...formData, guests });
-    } else if (name === "time") {
-      // Round time to the nearest 15-minute increment
-      const roundedTime = roundToNearest15Minutes(value);
-      setFormData({ ...formData, [name]: roundedTime });
     } else {
       setFormData({ ...formData, [name]: value });
     }
@@ -33,6 +94,10 @@ export default function ReservationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!availableTimes.find((t) => t.value === formData.time)?.isAvailable) {
+      alert("Selected time is not available. Please choose another.");
+      return;
+    }
     alert("Reservation submitted successfully!");
   };
 
@@ -146,20 +211,32 @@ export default function ReservationForm() {
             >
               Time
             </label>
-            <input
-              type="time"
+            <select
               name="time"
               id="time"
               value={formData.time}
               onChange={handleChange}
               required
-              step="900" // 15-minute increments (900 seconds)
-              className="border p-2 rounded w-full"
-            />
+              className="border p-2 rounded w-full text-gray-800 disabled:text-gray-400"
+            >
+              <option value="">Select a time</option>
+              {availableTimes.map((option) => (
+                <option
+                  key={option.value}
+                  value={option.value}
+                  disabled={!option.isAvailable}
+                  className={
+                    !option.isAvailable ? "text-gray-400" : "text-gray-800"
+                  }
+                >
+                  {option.value} {!option.isAvailable && "(Booked)"}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 
-        {/* Guests (inline label and input) */}
+        {/* Guests */}
         <div className="flex justify-center items-center">
           <label
             htmlFor="guests"
